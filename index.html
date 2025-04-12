@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ScribbleSync</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Drawing Canvas Area -->
+    <canvas id="drawCanvas" width="400" height="400" style="border:1px solid #ccc;"></canvas>
+
+    <!-- Drawing Logic Script -->
+    <script>
+      const canvas = document.getElementById("drawCanvas");
+      const ctx = canvas.getContext("2d");
+
+      let drawing = false;
+
+      canvas.addEventListener("pointerdown", (e) => {
+        drawing = true;
+        ctx.beginPath();
+        ctx.moveTo(e.offsetX, e.offsetY);
+      });
+
+      canvas.addEventListener("pointermove", (e) => {
+        if (!drawing) return;
+        ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.stroke();
+      });
+
+      canvas.addEventListener("pointerup", () => {
+        drawing = false;
+        ctx.closePath();
+      });
+    </script>
+
+    <!-- Your main JavaScript file -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
