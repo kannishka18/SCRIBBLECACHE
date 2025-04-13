@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -19,7 +20,10 @@ const App = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/Portfolio"element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/demo" element={<Demo />} />  {/* Add this route */}
+        <Route path="/demo" element={<Demo />} />
+       
+        
+        
       </Routes>
       <Footer />
     </Router>

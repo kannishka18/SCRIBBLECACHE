@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 import Features from "../components/Features";
-import Portfolio from "../pages/Portfolio"; 
+
 
 import centerImg from "../assets/child img.jpg";
 import leftImg from "../assets/image2.png";
@@ -43,7 +43,7 @@ const Home = () => {
       <Features />
 
       {/* ✅ Replace Testimonials with Portfolio */}
-      <Portfolio />
+      
     </main>
   );
 };
